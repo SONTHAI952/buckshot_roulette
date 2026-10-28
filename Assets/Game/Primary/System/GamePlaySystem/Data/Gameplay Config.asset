@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51644af600ee647feab9afc168f025e2, type: 3}
+  m_Name: Gameplay Config
+  m_EditorClassIdentifier: Assembly-CSharp::Game.Primary.GamePlaySystem.GameplayConfig
+  gameTitle: TEASE ROULETTE
+  playerName: YOU
+  dealerName: MISTRESS
+  liveName: HOT
+  blankName: COLD
+  liveColor: {r: 1, g: 0.16, b: 0.48, a: 1}
+  blankColor: {r: 0.45, g: 0.75, b: 1, a: 1}
+  items:
+  - id: 1
+    displayName: Lace Mask
+    description: 'Peek through the lace: see if the charge in the Wand is HOT or
+      COLD.'
+    color: {r: 1, g: 0.45, b: 0.7, a: 1}
+    prefab: {fileID: 7820566418687736133, guid: 7cd01f229798549cf9a0acb6e9228581, type: 3}
+  - id: 2
+    displayName: Champagne
+    description: Pop the cork! The current charge slides out without firing.
+    color: {r: 1, g: 0.85, b: 0.4, a: 1}
+    prefab: {fileID: 7041042398276969526, guid: f838f6ea51c034dd8872f4d8cbba2489, type: 3}
+  - id: 3
+    displayName: Ice Cube
+    description: Cool down. Restore 1 Stamina.
+    color: {r: 0.6, g: 0.9, b: 1, a: 1}
+    prefab: {fileID: 1609163129897320246, guid: 7b7390e2d74ff4222a5e15473a98425a, type: 3}
+  - id: 4
+    displayName: Leather Whip
+    description: Crack it. The next HOT zap hits twice as hard.
+    color: {r: 1, g: 0.25, b: 0.25, a: 1}
+    prefab: {fileID: 2933840652179081791, guid: e071f1735f54a4dcf8786c0bf5c40318, type: 3}
+  - id: 5
+    displayName: Fluffy Handcuffs
+    description: Cuff her. She skips her next turn.
+    color: {r: 1, g: 0.55, b: 0.8, a: 1}
+    prefab: {fileID: 2405549526110119444, guid: 8aab6fd8a3ffb46499010da6c943e50a, type: 3}
+  - id: 6
+    displayName: Collar & Leash
+    description: 'Leash her: take one of her items and use it right away.'
+    color: {r: 0.95, g: 0.3, b: 0.9, a: 1}
+    prefab: {fileID: 6273871008655954240, guid: 6b6f42cf684d944f8ba69a64748400bc, type: 3}
+  - id: 7
+    displayName: Love Dice
+    description: 'Roll for a hint: reveals one random upcoming charge.'
+    color: {r: 1, g: 0.7, b: 0.85, a: 1}
+    prefab: {fileID: 2354153108305173790, guid: d6769f1b4ba88435f99ecede5d4f07af, type: 3}
+  - id: 8
+    displayName: Mystery Pill
+    description: 'Feeling lucky? 50%: +2 Stamina. 50%: -1 Stamina.'
+    color: {r: 0.7, g: 0.45, b: 1, a: 1}
+    prefab: {fileID: 6965923871111743859, guid: 3641ad1dd4aea4a3fb1d62deeb8e3348, type: 3}
+  - id: 9
+    displayName: Hot Wax Candle
+    description: 'Drip hot wax on the Wand: flips the current charge HOT <-> COLD.'
+    color: {r: 1, g: 0.55, b: 0.2, a: 1}
+    prefab: {fileID: 385161782513510366, guid: db0f4469331cd4d7589ca9c54dca14a5, type: 3}
+  dealerThinkMin: 0.7
+  dealerThinkMax: 1.3
+  stealTimeLimit: 8
+  shellShowDuration: 2.2
+  bannerDuration: 1.6
+  dealerMaxItemUsesPerTurn: 10
+  fixedSeed: 0
+  showShellOrderInDevelopmentBuild: 1

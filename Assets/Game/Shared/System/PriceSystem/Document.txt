@@ -1,0 +1,1 @@
+Khi dùng hãy kéo prefab Price System Manager lên scene để có thể reset khi qua ngày mới

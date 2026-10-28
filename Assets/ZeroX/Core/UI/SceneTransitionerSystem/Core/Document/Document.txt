@@ -1,0 +1,32 @@
+﻿1, Tạo Setting
+Nếu setting chưa tồn tại hãy tạo 1 cái.
+Sử dụng menu Tools/ZeroX/Scene Transitioner/Setting
+
+2, Setting
+Bạn cần khai báo danh sách các scene transitioner muốn dùng trong setting. Mỗi scene transitioner được đại diện bởi một id.
+Nếu bạn không khai báo thì template sẽ được sử dụng
+
+
+3, Transition với code
+SceneTransitioner.Default.LoadSceneAsync là được
+
+Trong đó Default ứng với id default
+
+
+4, Tạo các property tùy chỉnh của bạn
+Ví dụ bạn có scene transitioner riêng cho việc load Level, và bạn muốn load với cú pháp:
+SceneTransitioner.GamePlay.LoadSceneAsync
+
+Mở script SceneTransitioner_Instance trong thư mục Implement/Code để khai báo thêm property như sau:
+
+public static SceneTransitioner InGamePlay => SceneTransitionerManager.Get("game_play");
+
+
+5, LoadScene mà không AllowSceneActivation ngay lập tức
+Sau khi load scene SceneTransitioner.Default.LoadSceneAsync thì gọi:
+SceneTransitioner.GamePlay.AllowSceneActivationAfterLoadDone = false;
+
+
+6, Load xong nhưng không muốn đóng UI ngay
+các hàm load có parameter autoCloseAfterLoadDone, truyền vào false để không đóng UI sau khi load xong
+Muốn close thì sau khi load xong hãy gọi SceneTransitioner.Current.ManualClose();

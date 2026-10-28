@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CS.Helper</name>
+    </assembly>
+    <members>
+        <member name="T:CS.Excutor">
+            <summary>
+            The helper class to excute a function from any where into Unity mainthread. Usefull for call back by Ads, Firebase, Facebook... or other third party.
+            </summary>
+        </member>
+        <member name="M:CS.Excutor.Schedule(System.Action,System.Single,System.Boolean)">
+            <summary>The task will be add into a queue after 'delayTime' seconds, then be excute from main thread (on Update) </summary>
+        </member>
+        <member name="M:CS.Excutor.Schedule``1(System.Action{``0},``0,System.Single,System.Boolean)">
+            <summary>The task will be add into a queue after 'delayTime' seconds, then be excute from main thread (on Update) </summary>
+        </member>
+        <member name="M:CS.Excutor.Schedule(System.Collections.IEnumerator)">
+            <summary>The enumerator will be add into a queue to be excute from main thread (on Update) </summary>
+        </member>
+        <member name="P:CS.Networker.IsInternetAvaiable">
+            <summary>
+            This need to be call from mainthread. 
+            <para>If you use this via other thirdparty (firebase, ads, facebook...): call inside "Excutor.Schedule"</para>
+            </summary>
+        </member>
+        <member name="T:CS.Yielder">
+            <summary>
+            The helper class to get a yielder waiting, use this for GC optimization
+            </summary>
+        </member>
+        <member name="M:CS.Yielder.Wait(System.Single)">
+            <summary>
+            Find a cached WaitForSeconds object, if null, create new one then add to cache.
+            </summary>
+            <param name="seconds">float seconds</param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Yielder.WaitForMiliseconds(System.UInt32)">
+            <summary>
+            Find a cached WaitForSeconds object, if null, create new one then add to cache.
+            </summary>
+            <param name="miliseconds">1 seconds = 1000 miliseconds</param>
+            <returns></returns>
+        </member>
+        <member name="M:CS.Yielder.WaitRealtime(System.Single)">
+            <summary>
+            Find a cached WaitForSecondsRealtime object, if null, create new one then add to cache.
+            </summary>
+            <param name="seconds">float seconds</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

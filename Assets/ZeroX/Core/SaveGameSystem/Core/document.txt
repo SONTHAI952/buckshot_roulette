@@ -1,0 +1,14 @@
+1, Cách thêm 1 NodeType
+Thêm trong enum NodeType
+Thêm kiểu dữ liệu mã hóa trong Security
+Thêm các hàm thao tác với value trong SGNode Primitive như các type đã có
+Thêm case trong các hàm trong file SGNode_Handler
+Thêm các hàm thao tác với childValue trong SGNode_ChildValue và Database_ChildValue
+Cập nhật IsNumber nếu type thêm là number
+Bổ sung type cho ReflectionType
+Bổ sung case cho SetObject trong script SGNode_Object_Set
+
+
+
+2, Lưu ý khi thêm StorageService
+Hãy sử dụng SaveGame.persistentDataPath thay vì Application.persistentDataPath

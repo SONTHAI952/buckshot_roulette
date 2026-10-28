@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc6b7b8d2fbb4f0ab2d105777054700a, type: 3}
+  m_Name: Window Sorting
+  m_EditorClassIdentifier: 
+  activeWindowCapacityPerLayer: 20
+  listWindowSortingLayerData:
+  - id: 0
+    spacingStart: 5
+  - id: 100
+    spacingStart: 5
+  - id: 200
+    spacingStart: 5
+  - id: 300
+    spacingStart: 5
+  - id: 800
+    spacingStart: 5
+  - id: 900
+    spacingStart: 5
+  - id: 1000
+    spacingStart: 5

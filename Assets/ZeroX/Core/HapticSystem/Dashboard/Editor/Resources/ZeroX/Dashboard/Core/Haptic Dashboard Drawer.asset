@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c79bf253b4c44d0bf36644d24cd0e5f, type: 3}
+  m_Name: Haptic Dashboard Drawer
+  m_EditorClassIdentifier: 
+  id: haptic
+  order: 0
+  title: Haptic
+  icon: {fileID: 2800000, guid: ee63b059488a9074abee29098cb221c0, type: 3}
+  shortDescription: 
+  fullDescription: "S\u1EED d\u1EE5ng HapticManager \u0111\u1EC3 g\u1ECDi c\xE1c
+    h\xE0m rung"
+  listRequiredSdkDefine:
+  - {fileID: 11400000, guid: ebae3fc2a7a212f44885a26b91f9d4b3, type: 2}
+  listOptionalSdkDefine: []

@@ -1,0 +1,5 @@
+id,type,amount_type,is_singleton,is_nested,key_name,parent_link_icon,link_icon,data_handler_class
+coin,money,long,1,0,coin,,coin,
+gem,money,long,1,0,gem,,gem,
+energy,energy,long,1,0,energy,,energy,
+remove_ads_forever,normal,long,1,0,remove_ads_forever,,remove_ads_forever,

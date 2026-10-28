@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b464e9a084143d0b286b1a9c537bec9, type: 3}
+  m_Name: Window Dashboard Drawer
+  m_EditorClassIdentifier: 
+  id: window
+  order: 0
+  title: Window
+  icon: {fileID: 2800000, guid: 299c416718aca461bba0329314c66746, type: 3}
+  shortDescription: "H\u1EC7 th\u1ED1ng c\u1EEDa s\u1ED5 h\u1ED7 tr\u1EE3 l\xE0m
+    UI trong game"
+  fullDescription: "<b><size=15>\u0110\u1EC3 t\u1EA1o nhanh m\u1ED9t window:</size></b>\nChu\u1ED9t
+    ph\u1EA3i trong scene/ZeroX/Window Template/Ch\u1ECDn lo\u1EA1i ph\xF9 h\u1EE3p
+    vs nhu c\u1EA7u.\n\n\nM\u1ED9t s\u1ED1 setting c\u1EE7a Window\n\n<b><size=15>1,
+    Use GUICamera</size></b>\nKhi s\u1EED d\u1EE5ng Canvas d\u1EA1ng ScreenSpace
+    - Camera, khi window \u0111\u01B0\u1EE3c sinh ra s\u1EBD t\u1EF1 \u0111\u1ED9ng
+    l\u1EA5y GUICamera \u0111\u1EC3 set cho Canvas\n\n\n<b><size=15>2, Sorting Config</size></b>\nKhi
+    m\u1ED9t window \u0111\u01B0\u1EE3c Open, n\xF3 s\u1EBD lu\xF4n hi\u1EC3n th\u1ECB
+    ph\xEDa tr\xEAn c\xE1c window kh\xE1c trong c\xF9ng layer (layer c\u1EE7a h\u1EC7
+    th\u1ED1ng window ch\u1EE9 kh\xF4ng ph\u1EA3i layer c\u1EE7a Unity)\n\nVisible
+    When Behind: N\u1EBFu t\u1EAFt th\xEC khi m\u1ED9t window kh\xE1c hi\u1EC3n th\u1ECB
+    ph\xEDa tr\xEAn th\xEC window n\xE0y s\u1EBD b\u1ECB v\xF4 h\xECnh. N\u1EBFu
+    b\u1EADt th\xEC s\u1EBD kh\xF4ng b\u1ECB v\xF4 h\xECnh \n\n\n<b><size=15>3, Transition</size></b>\nKi\u1EC3m
+    so\xE1t th\u1EDDi gian v\xE0 ho\u1EA1t \u1EA3nh \u0111\xF3ng m\u1EDF window.\n\nMode
+    - Global: s\u1EBD s\u1EED d\u1EE5ng setting t\u1EEB Global Window Transition,
+    h\u1EEFu \xEDch khi mu\u1ED1n t\u1EA5t c\u1EA3 window chung m\u1ED9t ho\u1EA1t
+    \u1EA3nh v\xE0 khi c\u1EA7n thay \u0111\u1ED5i ho\u1EA1t \u1EA3nh c\xF3 th\u1EC3
+    thay \u0111\u1ED5i \u0111\u01B0\u1EE3c t\u1EA5t c\u1EA3.\n\nMode - Custom: c\u1EA5u
+    h\xECnh ho\u1EA1t \u1EA3nh ri\xEAng cho window \u0111\xF3\n\n\nAnimType - None:
+    kh\xF4ng c\xF3 ho\u1EA1t \u1EA3nh, khi g\u1ECDi Open ho\u1EB7c Close s\u1EBD
+    m\u1EDF v\xE0 \u0111\xF3ng ngay l\u1EADp t\u1EE9c.\n\nAnimType - Pure: L\xE0
+    anim d\u1EA1ng script \u0111\u01A1n gi\u1EA3n, ho\xE0n to\xE0n l\xE0 code, truy
+    v\u1EA5n qua id.\n\nAnimType - MonoBehaviour: L\xE0 anim s\u1EED d\u1EE5ng m\u1ED9t
+    script MonoBehaviour \u0111\u1EC3 l\xE0m ho\u1EA1t \u1EA3nh, c\xF3 th\u1EC3 g\u1EAFn
+    ngay v\xE0o Window. Ph\xF9 h\u1EE3p cho c\xE1c anim ph\u1EE9c t\u1EA1p c\u1EA7n
+    ref nhi\u1EC1u th\xE0nh ph\u1EA7n trong Window\n\nAnimType - ScriptableObject:
+    L\xE0 anim s\u1EED d\u1EE5ng m\u1ED9t ScriptableObject \u0111\u1EC3 l\xE0m ho\u1EA1t
+    \u1EA3nh, v\u1EC1 c\u01A1 b\u1EA3n kh\xE1 gi\u1ED1ng Pure, ch\u1EC9 l\xE0 kh\xF4ng
+    c\u1EA7n ph\u1EA3i id v\xE0 kh\xF4ng c\u1EA7n \u0111\u1EB7t trong Window nh\u01B0
+    MonoBehaviour.\n\n\n<b><size=15>4, Advanced</size></b>\nAction Type When Closed:
+    Khi Window \u0111\xF3ng th\xEC s\u1EBD l\xE0m g\xEC, Deactive Window hay ch\u1EC9
+    v\xF4 h\xECnh (T\u1EAFt canvas v\xE0 raycast target)"
+  listRequiredSdkDefine: []
+  listOptionalSdkDefine: []

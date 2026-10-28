@@ -1,0 +1,186 @@
+﻿#region copyright
+// ------------------------------------------------------
+// Copyright (C) Dmitriy Yukhanov [https://codestage.net]
+// ------------------------------------------------------
+#endregion
+
+using System;
+using UnityEngine;
+using ZeroX.SaveGameSystem.Security.EmbedAntiCheat;
+
+namespace ZeroX.SaveGameSystem.Security
+{
+	/// <summary>
+	/// Use it instead of regular <c>long</c> for any cheating-sensitive variables.
+	/// </summary>
+	/// <strong><em>Regular type is faster and memory wiser comparing to the obscured one!</em></strong><br/>
+	/// Feel free to use regular types for all short-term operations and calculations while keeping obscured type only at the long-term declaration (i.e. class field).
+	[Serializable]
+	public partial struct ELong : IObscuredType
+	{
+		[SerializeField] internal long currentCryptoKey;
+		[SerializeField] internal long hiddenValue;
+		[SerializeField] internal bool inited;
+
+		public long Value
+		{
+			get => InternalDecrypt();
+			set
+			{
+				currentCryptoKey = GenerateKey();
+				hiddenValue = Encrypt(value, currentCryptoKey);
+			
+				inited = true;
+			}
+		}
+		
+		public ELong(long value)
+		{
+			currentCryptoKey = GenerateKey();
+			hiddenValue = Encrypt(value, currentCryptoKey);
+			
+			inited = true;
+		}
+
+		/// <summary>
+		/// Encrypts passed value using passed key.
+		/// </summary>
+		/// Key can be generated automatically using GenerateKey().
+		/// \sa Decrypt(), GenerateKey()
+		public static long Encrypt(long value, long key)
+		{
+			return value ^ key;
+		}
+
+		/// <summary>
+		/// Decrypts passed value you got from Encrypt() using same key.
+		/// </summary>
+		/// \sa Encrypt()
+		public static long Decrypt(long value, long key)
+		{
+			return value ^ key;
+		}
+
+		/// <summary>
+		/// Creates and fills obscured variable with raw encrypted value previously got from GetEncrypted().
+		/// </summary>
+		/// Literally does same job as SetEncrypted() but makes new instance instead of filling existing one,
+		/// making it easier to initialize new variables from saved encrypted values.
+		///
+		/// <param name="encrypted">Raw encrypted value you got from GetEncrypted().</param>
+		/// <param name="key">Encryption key you've got from GetEncrypted().</param>
+		/// <returns>New obscured variable initialized from specified encrypted value.</returns>
+		/// \sa GetEncrypted(), SetEncrypted()
+		public static ELong FromEncrypted(long encrypted, long key)
+		{
+			var instance = new ELong();
+			instance.SetEncrypted(encrypted, key);
+			return instance;
+		}
+
+		/// <summary>
+		/// Generates random key. Used internally and can be used to generate key for manual Encrypt() calls.
+		/// </summary>
+		/// <returns>Key suitable for manual Encrypt() calls.</returns>
+		public static long GenerateKey()
+		{
+			return RandomUtils.GenerateLongKey();
+		}
+
+		/// <summary>
+		/// Allows to pick current obscured value as is.
+		/// </summary>
+		/// <param name="key">Encryption key needed to decrypt returned value.</param>
+		/// <returns>Encrypted value as is.</returns>
+		/// Use it in conjunction with SetEncrypted().<br/>
+		/// Useful for saving data in obscured state.
+		/// \sa FromEncrypted(), SetEncrypted()
+		public long GetEncrypted(out long key)
+		{
+			if (!inited)
+				Init();
+			
+			key = currentCryptoKey;
+			return hiddenValue;
+		}
+
+		/// <summary>
+		/// Allows to explicitly set current obscured value. Crypto key should be same as when encrypted value was got with GetEncrypted().
+		/// </summary>
+		/// Use it in conjunction with GetEncrypted().<br/>
+		/// Useful for loading data stored in obscured state.
+		/// \sa FromEncrypted()
+		public void SetEncrypted(long encrypted, long key)
+		{
+			inited = true;
+			hiddenValue = encrypted;
+			currentCryptoKey = key;
+		}
+
+		/// <summary>
+		/// Alternative to the type cast, use if you wish to get decrypted value
+		/// but can't or don't want to use cast to the regular type.
+		/// </summary>
+		/// <returns>Decrypted value.</returns>
+		public long GetDecrypted()
+		{
+			return InternalDecrypt();
+		}
+
+		public void RandomizeCryptoKey()
+		{
+			var decrypted = InternalDecrypt();
+			currentCryptoKey = GenerateKey();
+			hiddenValue = Encrypt(decrypted, currentCryptoKey);
+		}
+
+		private long InternalDecrypt()
+		{
+			if (!inited)
+			{
+				Init();
+				return 0;
+			}
+
+			var decrypted = Decrypt(hiddenValue, currentCryptoKey);
+			return decrypted;
+		}
+		
+		private void Init()
+		{
+			currentCryptoKey = GenerateKey();
+			hiddenValue = Encrypt(0, currentCryptoKey);
+			
+			inited = true;
+		}
+		
+		#region obsolete
+		
+		//! @cond
+
+		[Obsolete("This API is redundant and does not perform any actions. It will be removed in future updates.")]
+		public static void SetNewCryptoKey(long newKey) {}
+
+		[Obsolete("This API is redundant and does not perform any actions. It will be removed in future updates.")]
+		public void ApplyNewCryptoKey() {}
+
+		[Obsolete("Please use new Encrypt(value, key) API instead.", true)]
+		public static long Encrypt(long value) { throw new Exception(); }
+
+		[Obsolete("Please use new Decrypt(value, key) API instead.", true)]
+		public static long Decrypt(long value) { throw new Exception(); }
+
+		[Obsolete("Please use new FromEncrypted(encrypted, key) API instead.", true)]
+		public static ELong FromEncrypted(long encrypted) { throw new Exception(); }
+
+		[Obsolete("Please use new GetEncrypted(out key) API instead.", true)]
+		public long GetEncrypted() { throw new Exception(); }
+
+		[Obsolete("Please use new SetEncrypted(encrypted, key) API instead.", true)]
+		public void SetEncrypted(long encrypted) {}
+		
+		//! @endcond
+
+		#endregion
+	}
+}

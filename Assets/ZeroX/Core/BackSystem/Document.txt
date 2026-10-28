@@ -1,0 +1,6 @@
+Thêm prefab Back Manager vào scene. BackManager là singleton
+Thêm các script Backable mong muốn vào các Popup
+
+Nên dùng BackableTriggerButtonBack để đồng nhất với việc click nút back
+
+Với những phần ko có UI để thêm Backable như là back để pause thì có thể sử dụng chức năng BackManager.Instance.ManualBackableTriggerButton()

@@ -1,0 +1,60 @@
+﻿1, Cách tạo Table
+Kế thừa từ 1 trong các class SoTable, SoTableOneId, TwoId...
+Custom MainPath bằng cách override MainPath, nếu không custom thì đường dẫn mặc định là tên class của table
+
+Ví dụ nếu MainPath là TableXXX thì vị trí đặt table là trong Resources/Database/TableXXX
+
+
+
+
+1, RowsI
+Đây là 1 property
+Khi truy cập property này trên editor thì sẽ tự động sinh ra 1 editor_ListRow clone từ listRow gốc(dữ liệu vẫn chung) để tránh thao tác sửa list sẽ
+ảnh hưởng đến listRow gốc
+
+
+
+
+
+2, Import từ csv đối với Row không phải ScriptableObject
+Sử dụng property RowsI để thao tác nên trên editor nên sẽ ko ảnh hưởng đến listRow gốc
+Quá trình import sẽ là clear RowsI sau đó add các row mới
+
+
+
+
+
+3, Import từ csv đối với Row là ScriptableObject
+Sử dụng property RowsI để thao tác nên trên editor nên sẽ ko ảnh hưởng đến listRow gốc
+
+Quá trình sẽ khác với Non-ScriptableObject
+Ở bước Clear RowsI sẽ phải Destroy các Row cũ vì là ScriptableObject.
+Tuy nhiên trên editor không thể cứ thế Destroy các row trong RowsI được, vì dù trên editor là list đã được clone, nhưng các phần tử trong list
+vẫn là các row gốc.
+
+Nhưng nếu là import lần 2, toàn bộ các phần tử trong RowsI đã là các rowSo được tạo trong runtime thì lại có thể Destroy
+
+
+Vì vậy cần check nếu là rowSo gốc tồn tại trong Project thì không Destroy, và ngược lại
+
+
+
+
+
+4, Import từ csv trong editor đối với Row không phải ScriptableObject
+B1, Sử dụng hàm import như bình thường
+Nhưng lúc này dữ liệu nằm trên RowsI(editor_ListRow)
+
+B2, Sao chép dữ liệu từ RowsI về listRow gốc và save lại table
+
+
+
+
+
+5, Import từ csv trong editor đối với Row ScriptableObject
+B1, sử dụng hàm import như bình thường
+Nhưng lúc này dữ liệu nằm trên RowsI(editor_ListRow)
+
+B2, Delete tất cả rowSo gốc trong listRow
+B3, CreateAsset từ các row trong RowsI và add vào listRow
+B4, Save lại table

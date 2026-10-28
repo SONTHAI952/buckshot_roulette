@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d16759eb51e40b39a4b6e480ea58f26, type: 3}
+  m_Name: music_ambient
+  m_EditorClassIdentifier: Assembly-CSharp::ZeroX.AudioSystem.AudioAsset
+  audioGroupId: 0
+  audioClip: {fileID: 8300000, guid: f5bf62764ada041dd8f07182108e9839, type: 3}
+  volumeFactor: 0.8

@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CS.Core</name>
+    </assembly>
+    <members>
+        <member name="T:CS.IngameConsole">
+            <summary> A console to display Unity's debug logs in-game. 
+            <para>Hold to any point on the screeen in 5s to Show the Ingame Console</para>
+            </summary> 
+        </member>
+        <member name="T:CS.Logs">
+            <summary>
+            Use this instead of "UnityEngine.Debug.Log". This class will auto remove all log in the release version for optimization (has condition).
+            <para>Usage: Call on first application script: "Logs.Settings.LogEnable" = true to show all log </para>
+            <para>This class not use function LogFormat from base, because LogFormat use casting params to "object", this will create boxing/unboxing. </para>
+            </summary>
+            <summary>
+            Use this instead of "UnityEngine.Debug.Log". This class will auto remove all log in the release version for optimization (has condition).
+            <para>Condition string (Scripting Define): "ENABLE_LOGS".</para>
+            </summary>
+        </member>
+        <member name="T:CS.Logs.Settings">
+            <summary>
+            Setting for show debug log
+            </summary>
+        </member>
+        <member name="F:CS.Logs.Settings.LogEnable">
+            <summary>
+            If this value is false, then no longer see any log call by Logs.
+            </summary>
+        </member>
+        <member name="F:CS.Logs.Settings.CoreLogEnable">
+            <summary>
+            Force enable log for Core module.
+            </summary>
+        </member>
+        <member name="F:CS.Logs.Settings.ObserverLogEnable">
+            <summary>
+            Force enable log for Core module.
+            </summary>
+        </member>
+        <member name="T:CS.Logs.Color">
+            <summary>
+            Show the log message with color to view more clearly. Color only work on Unity editor.
+            </summary>
+        </member>
+        <member name="P:CS.Logs.IsEnable">
+            <summary>
+            return true if exist this flag in PlayerSettings.ScriptingDefine: "ENABLE_LOGS"
+            </summary>
+        </member>
+        <member name="M:CS.Logs.Log(System.String)">
+            <summary>
+            This method only show log msg when flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.Log(System.String,System.Boolean)">
+            <summary>
+            This method only show log msg when input "forceLog" = true or flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.Log(System.String,CS.Logs.Color)">
+            <summary>
+            This method only show log msg when flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.Log(System.String,System.Boolean,CS.Logs.Color)">
+            <summary>
+            This method only show log msg when input "forceLog" = true or flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogError(System.String)">
+            <summary>
+            This method only show log msg when flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogError(System.String,System.Boolean)">
+            <summary>
+            This method only show log msg when input "forceLog" = true or flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogWarning(System.String)">
+            <summary>
+            This method only show log msg when flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogWarning(System.String,System.Boolean)">
+            <summary>
+            This method only show log msg when input "forceLog" = true or flag "ENABLE_LOGS" has config at ScriptingDefine, or has setting from remote service.
+            <para>Use this function instead of "UnityEngine.Debug.Log" for optimization. (In the release version, you have to remove flag "ENABLE_LOGS" from ScriptingDefine)</para>
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogFormat(System.String,System.Object[])">
+            <summary>
+            "This will be remove in the future becase it use object to casting parameter, this create a boxing/unboxing and not good for performance"
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogFormat(UnityEngine.Object,System.String,System.Object[])">
+            <summary>
+            "This will be remove in the future becase it use object to casting parameter, this create a boxing/unboxing and not good for performance"
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogErrorFormat(System.String,System.Object[])">
+            <summary>
+            "This will be remove in the future becase it use object to casting parameter, this create a boxing/unboxing and not good for performance"
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogErrorFormat(UnityEngine.Object,System.String,System.Object[])">
+            <summary>
+            "This will be remove in the future becase it use object to casting parameter, this create a boxing/unboxing and not good for performance"
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogWarningFormat(System.String,System.Object[])">
+            <summary>
+            "This will be remove in the future becase it use object to casting parameter, this create a boxing/unboxing and not good for performance"
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogWarningFormat(UnityEngine.Object,System.String,System.Object[])">
+            <summary>
+            "This will be remove in the future becase it use object to casting parameter, this create a boxing/unboxing and not good for performance"
+            </summary>
+        </member>
+        <member name="M:CS.Logs.Log(System.String,UnityEngine.LogType)">
+            <summary>
+            This method will auto remove all log in the release version for optimization.
+            </summary>
+        </member>
+        <member name="M:CS.Logs.Log(UnityEngine.Object,System.String,UnityEngine.LogType)">
+            <summary>
+            This method will auto remove all log in the release version for optimization (except logtype = Error).
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogFormat(UnityEngine.LogType,System.String,System.Object[])">
+            <summary>
+            This method will auto remove all log in the release version for optimization (except logtype = Error).
+            </summary>
+        </member>
+        <member name="M:CS.Logs.LogFormat(UnityEngine.Object,UnityEngine.LogType,System.String,System.Object[])">
+            <summary>
+            This method will auto remove all log in the release version for optimization (except logtype = Error).
+            </summary>
+        </member>
+        <member name="T:CS.PerformanceReporter">
+            <summary>
+            Call "PerformanceReporter.Instance.Preload" at the first application script to get report of ram, cpu about the game used.
+            </summary>
+        </member>
+        <member name="T:CS.Singleton`1">
+            <summary> 
+            Singleton class which is not MonoBehavior. 
+            <para> Call T.Instance.Preload() at the first script startup of application to prepare init. </para>
+            </summary>
+        </member>
+        <member name="F:CS.Singleton`1.__instance">
+            <summary> This is local variable. Use 'Instance' from outsite. </summary>
+        </member>
+        <member name="P:CS.Singleton`1.Initialized">
+            <summary> 
+             If you want to check null, use this property instead of calling to "Instance" 
+             because "Instance" can auto create an emty gameobject, so "Instance" can never null 
+             </summary> */
+        </member>
+        <member name="P:CS.Singleton`1.Instance">
+            <summary> 
+            This will auto create new if instance is null.
+            <para> If you want to check null, use 'if (T.Initialized)' instead of 'if (T.Instance != null)' </para>
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.#ctor">
+            <summary>
+            Constructor will call automaticaly on the first call of "Instance"
+            <para>If you want to create your custom constructor, note that deliver from this "base" </para>
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.Finalize">
+            <summary>
+            This will call automaticly by GC.Collect when no one reference to this instance.
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.Initialize">
+            <summary> 
+            This function will be call automaticaly only one times (on the first call of "Instance")
+            <para>Put your custom initialize here. No need to call "base.Initialize" </para>
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.Preload">
+            <summary> 
+            This method is empty function, just use to prepare initialize the "Instance" to improve Ram/ CPU (to preload or decompress all asset inside)
+            <para>Call this at the first application script (exp: BasePreload.cs)</para>
+            <para>Be carefully if you override this and put your custom initialzation here, 
+            because this function can be call many times on any where, so the initialization inside will be init many times too</para>
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.Dispose">
+            <summary>
+            Call this method to manual release (destroy) the instance.
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.OnDispose">
+            <summary>
+            Override this and set all field which are reference type to null to release RAM because GC will not care for type of this Singleton.
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.OnApplicationQuit">
+            <summary>
+            If you want to override this method, remember to call this base.
+            </summary>
+        </member>
+        <member name="M:CS.Singleton`1.OnDestroy">
+            <summary>
+            If you want to override this method, remember to call this base.
+            </summary>
+        </member>
+        <member name="T:CS.Private.ASingletonMono`1">
+            <summary> Base Singleton class which is MonoBehavior. Don't use this class outside the lib </summary>
+        </member>
+        <member name="F:CS.Private.ASingletonMono`1.__instance">
+            <summary> This is local variable. Use 'Instance' from outsite. </summary>
+        </member>
+        <member name="P:CS.Private.ASingletonMono`1.Initialized">
+            <summary> 
+            If you want to check null, use this property instead of calling to "Instance" 
+            because "Instance" can auto create an emty gameobject, so "Instance" can never null 
+            </summary> */
+        </member>
+        <member name="P:CS.Private.ASingletonMono`1.KeepAlive">
+            <summary>
+            If this is set to "true", gameObject will be DontDestroyOnLoad
+            <para>Do not use this outside the Lib</para>
+            </summary>
+        </member>
+        <member name="M:CS.Private.ASingletonMono`1.Awake">
+            <summary> 
+            This method use to init "instance". Don't use this outside the lib.
+            <para>If you want to put your custom initialization, override "OnAwake" (or "Preload") instead</para>
+            </summary>
+        </member>
+        <member name="M:CS.Private.ASingletonMono`1.OnAwake">
+            <summary> 
+            This function will be call automaticaly from "Awake" only one times (on the first call of "Instance")
+            <para>Put your custom initialize here. No need to call "base.OnAwake" </para>
+            </summary>
+        </member>
+        <member name="M:CS.Private.ASingletonMono`1.OnDestroy">
+            <summary> 
+            This will release instance = null. if you override this, 
+            remember to call "base.OnDestroy" at the end of this function 
+            </summary>
+        </member>
+        <member name="M:CS.Private.ASingletonMono`1.OnApplicationQuit">
+            <summary>
+            If you want to override this method, remember to call this base.
+            </summary>
+        </member>
+        <member name="M:CS.Private.ASingletonMono`1.Preload">
+            <summary> 
+            This method is empty function, just use to prepare initialize the "Instance" to improve Ram/ CPU (to preload or decompress all asset inside)
+            <para>Call this at the first application script (exp: BasePreload.cs)</para>
+            <para>Be carefully if you override this and put your custom initialzation here, 
+            because this function can be call many times on any where, so the initialization inside will be init many times too</para>
+            </summary>
+        </member>
+        <member name="M:CS.Private.ASingletonMono`1.Dispose">
+            <summary>
+            Call this method if you want to destroy this singleton
+            </summary>
+        </member>
+        <member name="T:CS.SingletonBind`1">
+            <summary> 
+            <para> "Instance" = Find object in scene. </para>
+            <para> Must be added to scene before run </para>
+            </summary>
+        </member>
+        <member name="P:CS.SingletonBind`1.Instance">
+            <summary> If you want to check null, use 'if (T.Initialized)' instead of 'if (T.Instance != null)' </summary>
+        </member>
+        <member name="M:CS.SingletonBind`1.OnAwake">
+            <summary> 
+            This function will be call automaticaly from "Awake" only one times (on the first call of "Instance")
+            <para>Put your custom initialize here. No need to call "base.OnAwake" </para>
+            </summary>
+        </member>
+        <member name="T:CS.SingletonBindAlive`1">
+            <summary> 
+            <para> "Instance" = Find object in scene. </para>
+            <para> Must be added to scene before run </para>
+            <para> Instance is DontDestroyOnLoad </para>
+            </summary>
+        </member>
+        <member name="P:CS.SingletonBindAlive`1.KeepAlive">
+            <summary>
+            If this is set to "true", gameObject will be DontDestroyOnLoad
+            <para>Do not use this outside the Lib</para>
+            </summary>
+        </member>
+        <member name="T:CS.SingletonFree`1">
+            <summary> 
+            <para>"Instance" = new GameObject if can not find it on scene. </para>
+            <para> No scene reference variables. </para>
+            </summary>
+        </member>
+        <member name="P:CS.SingletonFree`1.Instance">
+            <summary> If you want to check null, use 'if (T.Initialized)' instead of 'if (T.Instance != null)' </summary>
+        </member>
+        <member name="M:CS.SingletonFree`1.OnAwake">
+            <summary> 
+            This function will be call automaticaly from "Awake" only one times (on the first call of "Instance")
+            <para>Put your custom initialize here. No need to call "base.OnAwake" </para>
+            </summary>
+        </member>
+        <member name="T:CS.SingletonFreeAlive`1">
+            <summary> 
+            <para> "Instance" = new GameObject if can not find it on scene. </para>
+            <para> No scene reference variables. </para>
+            <para> Instance is DontDestroyOnLoad </para>
+            </summary>
+        </member>
+        <member name="P:CS.SingletonFreeAlive`1.KeepAlive">
+            <summary>
+            If this is set to "true", gameObject will be DontDestroyOnLoad
+            <para>Do not use this outside the Lib</para>
+            </summary>
+        </member>
+        <member name="T:CS.SingletonResourcesPrefab`1">
+            <summary> 
+            <para> "Instance" = Instantiate from Resources folder when be called at runtime.</para>
+            <para> Place your prefab in Resources: "Prefabs/T/T", T is the name of class </para> 
+            </summary>
+        </member>
+        <member name="P:CS.SingletonResourcesPrefab`1.ResourcePath">
+            <summary> 
+            <para> Place your prefab in Resources folder: "Prefabs/T/T", T is the name of class </para> 
+            </summary>
+        </member>
+        <member name="P:CS.SingletonResourcesPrefab`1.Instance">
+            <summary> 
+            <para> "Instance" = Instantiate from Resources folder when be called at runtime.</para>
+            <para> Place your prefab in Resources: "Prefabs/T/T", T is the name of class </para> 
+            </summary>
+        </member>
+        <member name="M:CS.SingletonResourcesPrefab`1.OnAwake">
+            <summary> 
+            This function will be call automaticaly from "Awake" only one times (on the first call of "Instance")
+            <para>Put your custom initialize here. No need to call "base.OnAwake" </para>
+            </summary>
+        </member>
+        <member name="T:CS.SingletonResourcesPrefabAlive`1">
+            <summary>
+            <para> "Instance" = Instantiate from Resources folder when be called at runtime. </para>
+            <para> Place your prefab in Resources: "Prefabs/T/T", T is the name of class </para> 
+            <para> Instance is DontDestroyOnLoad</para>
+            </summary>
+        </member>
+        <member name="P:CS.SingletonResourcesPrefabAlive`1.KeepAlive">
+            <summary>
+            If this is set to "true", gameObject will be DontDestroyOnLoad
+            <para>Do not use this outside the Lib</para>
+            </summary>
+        </member>
+        <member name="T:CS.SingletonScriptable`1">
+            <summary> 
+            An Esily of create Instance of ScriptableObject.
+            </summary>
+        </member>
+        <member name="F:CS.SingletonScriptable`1.__instance">
+            <summary> This is local variable. Use 'Instance' from outsite. </summary>
+        </member>
+        <member name="P:CS.SingletonScriptable`1.Initialized">
+            <summary> 
+             If you want to check null, use this property instead of calling to "Instance" 
+             because "Instance" can auto create an emty gameobject, so "Instance" can never null 
+             </summary>
+        </member>
+        <member name="P:CS.SingletonScriptable`1.Instance">
+            <summary> 
+            This will auto create new if instance is null.
+            <para> If you want to check null, use 'if (T.Initialized)' instead of 'if (T.Instance != null)' </para>
+            </summary>
+        </member>
+        <member name="M:CS.SingletonScriptable`1.Initialize">
+            <summary> 
+            This function will be call automaticaly only one times (on the first call of "Instance")
+            <para>Put your custom initialize here. No need to call "base.Initialize" </para>
+            </summary>
+        </member>
+        <member name="M:CS.SingletonScriptable`1.Dispose">
+            <summary>
+            Call this method to manual release (destroy) the instance.
+            </summary>
+        </member>
+        <member name="M:CS.SingletonScriptable`1.Finalize">
+            <summary>
+            This will call automaticly by GC.Collect when no one reference to this instance.
+            </summary>
+        </member>
+        <member name="M:CS.SingletonScriptable`1.OnApplicationQuit">
+            <summary>
+            If you want to override this method, remember to call this base.
+            </summary>
+        </member>
+        <member name="T:CS.SingletonResourcesScriptable`1">
+            <summary> 
+            <para> "Instance" = Instantiate from Resources folder when be called at runtime.</para>
+            <para> Place your prefab in Resources: "Scriptable/T/T", T is the name of class </para> 
+            </summary>
+        </member>
+        <member name="F:CS.SingletonResourcesScriptable`1.__instance">
+            <summary> This is local variable. Use 'Instance' from outsite. </summary>
+        </member>
+        <member name="P:CS.SingletonResourcesScriptable`1.Initialized">
+            <summary> 
+             If you want to check null, use this property instead of calling to "Instance" 
+             because "Instance" can auto create an emty gameobject, so "Instance" can never null 
+             </summary>
+        </member>
+        <member name="P:CS.SingletonResourcesScriptable`1.ResourcePath">
+            <summary> 
+            <para> Place your prefab in Resources folder: "Scriptable/T/T", T is the name of class </para> 
+            </summary>
+        </member>
+        <member name="P:CS.SingletonResourcesScriptable`1.Instance">
+            <summary> 
+            <para> "Instance" = Instantiate from Resources folder when be called at runtime.</para>
+            <para> Place your prefab in Resources: "Scriptable/T/T", T is the name of class </para> 
+            </summary>
+        </member>
+        <member name="M:CS.SingletonResourcesScriptable`1.Initialize">
+            <summary> 
+             If you want to check null, use this property instead of calling to "Instance" 
+             because "Instance" can auto create an emty gameobject, so "Instance" can never null 
+             </summary> */
+        </member>
+        <member name="M:CS.SingletonResourcesScriptable`1.Preload">
+            <summary> 
+            This method is empty function, just use to prepare initialize the "Instance" to improve Ram/ CPU (to preload or decompress all asset inside)
+            <para>Call this at the first application script (exp: BasePreload.cs)</para>
+            <para>Be carefully if you override this and put your custom initialzation here, 
+            because this function can be call many times on any where, so the initialization inside will be init many times too</para>
+            </summary>
+        </member>
+        <member name="M:CS.SingletonResourcesScriptable`1.Dispose">
+            <summary>
+            Call this method to manual release (destroy) the instance.
+            </summary>
+        </member>
+        <member name="M:CS.SingletonResourcesScriptable`1.Finalize">
+            <summary>
+            This will call automaticly by GC.Collect when no one reference to this instance.
+            </summary>
+        </member>
+        <member name="M:CS.SingletonResourcesScriptable`1.OnApplicationQuit">
+            <summary>
+            If you want to override this method, remember to call this base.
+            </summary>
+        </member>
+    </members>
+</doc>

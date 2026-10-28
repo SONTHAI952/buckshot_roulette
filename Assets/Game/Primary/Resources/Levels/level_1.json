@@ -1,0 +1,65 @@
+{
+    "mode": "Story",
+    "displayName": "STORY",
+    "stages": [
+        {
+            "name": "Round 1",
+            "minCharges": 2,
+            "maxCharges": 2,
+            "minItemsPerLoad": 0,
+            "maxItemsPerLoad": 0,
+            "itemPool": [],
+            "fixedLoads": [
+                { "live": 1, "blank": 2 },
+                { "live": 3, "blank": 2 }
+            ],
+            "minShells": 2,
+            "maxShells": 6,
+            "fatal": false,
+            "healingDisabledAtOrBelow": 0,
+            "revivalPenaltyIfWonPrevious": 0,
+            "revivalPenaltyIfLostPrevious": 0
+        },
+        {
+            "name": "Round 2",
+            "minCharges": 4,
+            "maxCharges": 4,
+            "minItemsPerLoad": 2,
+            "maxItemsPerLoad": 2,
+            "itemPool": ["Peek", "Eject", "Heal", "DoubleDamage", "SkipTurn"],
+            "fixedLoads": [
+                { "live": 1, "blank": 1 }
+            ],
+            "minShells": 2,
+            "maxShells": 8,
+            "fatal": false,
+            "healingDisabledAtOrBelow": 0,
+            "revivalPenaltyIfWonPrevious": 4000,
+            "revivalPenaltyIfLostPrevious": 2000
+        },
+        {
+            "name": "Round 3",
+            "minCharges": 4,
+            "maxCharges": 4,
+            "minItemsPerLoad": 4,
+            "maxItemsPerLoad": 4,
+            "itemPool": ["Peek", "Eject", "Heal", "DoubleDamage", "SkipTurn"],
+            "fixedLoads": [],
+            "minShells": 2,
+            "maxShells": 8,
+            "fatal": true,
+            "healingDisabledAtOrBelow": 2,
+            "revivalPenaltyIfWonPrevious": 0,
+            "revivalPenaltyIfLostPrevious": 0
+        }
+    ],
+    "economy": {
+        "baseCash": 70000,
+        "healItemPenalty": 220,
+        "ejectItemPenalty": 495,
+        "setBaseCash": 30000,
+        "cashDecayPerSecond": 25,
+        "setMinCash": 5000,
+        "continueMultiplier": 2
+    }
+}

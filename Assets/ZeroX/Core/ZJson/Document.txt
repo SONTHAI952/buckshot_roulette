@@ -1,0 +1,86 @@
+1, Performance
+String -> Node: ZJson > SimpleJson
+Node -> String: ZJson > SimpleJson
+
+String -> Object: JsonUtility > ZJson > NewtonSoft
+Object -> String: JsonUtility > (ZJson == NewtonSoft)
+
+Node -> Object và Object -> Node: chỉ ZJson mới có nên không thể so sánh
+
+
+2, Ưu điểm của ZJson
+So với NewtonSoft: ZJson có tốc độ nhanh hơn, vẫn hỗ trợ dictionary, list, array object
+
+So với SimpleJson: ZJson có tốc độ nhanh hơn
+
+So với JsonUtility: ZJson tuy chậm hơn, nhưng lại hỗ trợ dictionary, List, array object đa hình
+
+
+3, Attribute
+Nếu muốn ignore một field thì thêm attribute [System.NonSerialized]
+
+Mặc định UnityObject sẽ luôn được serialize thành guid nếu là trên editor.
+Nếu muốn serialize một UnityObject sang Json thì thêm attribute [ZJson_UnityObjectToJson] vào class.
+
+
+4, Top-level
+ObjectToJson và ObjectToNode chỉ nhận object, dictionary, list, array, built-in.
+Truyền scalar (số, string, bool, char) hoặc enum vào sẽ throw -> muốn serialize scalar thì bọc trong object hoặc list.
+Tương tự, JsonToObject không đọc được number trần ở top-level (ví dụ chuỗi "5").
+
+
+5, Rule với null và chuỗi rỗng
+
+ObjectToString:
+Một object null sẽ luôn được parse thành "null"
+Trừ ZJson.ObjectToJson: obj null thì trả về chuỗi ""
+
+JsonToObject:
+Có key thì sẽ tính là luôn ghi đè. Không muốn ghi đè thì xóa key.
+Một chuỗi null, "", "null" sẽ ghi đè object thành null
+
+Với FIELD trong class:
+- Value là null -> field bị ghi đè thành null. Field kiểu value-type thì về default.
+- Value SAI SHAPE so với type của field -> field về null/default (bỏ qua an toàn, không convert). Ví dụ:
+  chuỗi quoted (kể cả "") cho field không phải string/char, số/bool cho field object,
+  object cho field số, list cho field không phải list/array...
+- Value đúng shape nhưng nội dung hỏng (số tràn kiểu, chữ không quote...) -> throw
+
+Với ELEMENT của dictionary, list, array:
+- Element kiểu reference: null hợp lệ
+- Element kiểu value-type mà json là null hoặc "" -> throw "Json null for value type X, key/index: ..." (fail sớm để biết json sai mà sửa)
+
+
+6, Các kiểu dữ liệu
+
+char: serialize thành string có quote ("c"), giống NewtonSoft. Escape đầy đủ.
+
+NaN, Infinity, -Infinity (float/double): ghi và đọc lại được. Đọc nhận cả dạng chữ thường (nan, infinity).
+Lưu ý đây không phải JSON chuẩn RFC -> nếu json cần đưa cho hệ khác đọc (JS, server) thì tránh để NaN/Infinity trong data.
+
+Enum: ghi dạng số (kể cả khi làm dictionary key). Đọc nhận cả dạng số lẫn dạng tên ("Ngay").
+
+nint/nuint: hỗ trợ.
+
+Dictionary key: hỗ trợ string, số, bool, enum. Key string được escape đầy đủ.
+
+Escape string: hỗ trợ \" \\ \n \r \t \b \f \uXXXX ở cả value lẫn key.
+Chuỗi chứa ký tự đặc biệt (dấu nháy, xuống dòng, backslash cuối chuỗi, ký tự { } [ ] nằm trong chuỗi...) đều an toàn.
+
+Built-in Unity type: Vector2/3/4, Quaternion, Color, Color32, Matrix4x4 đi qua JsonUtility.
+Riêng Vector2Int, Vector3Int, Rect, RectInt, Bounds, BoundsInt, LayerMask, Hash128 có handler riêng
+(xem ZJsonBuiltInHandler - vì JsonUtility không serialize được các type này khi đứng root).
+AnimationCurve và Gradient sẽ luôn ra "{}" -> tránh dùng trong data cần round trip.
+
+
+7, IZJsonCustomSerializable
+ToJsonNode() phải trả về ZJsonObject hoặc null (không được trả ZJsonList hay ZJsonScalar, vì khi đọc lại sẽ không khớp).
+Trả null thì field sẽ được ghi thành null trong json.
+
+
+8, Giới hạn
+- Không hỗ trợ object tham chiếu vòng tròn (sẽ StackOverflow)
+- Không hỗ trợ Nullable<T>. Generic chỉ hỗ trợ List<> và Dictionary<,>
+- Json trùng key: field trong class lấy key cuối, còn dictionary và JsonToNode sẽ throw
+- Field đa hình ghi theo declared type của field; element trong list/dictionary ghi theo runtime type của element
+- Json sai format sẽ throw "Incorrect Json string format", exception chi tiết (tên key/index lỗi) xem trong Console

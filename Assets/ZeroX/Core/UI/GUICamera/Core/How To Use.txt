@@ -1,0 +1,2 @@
+Sửa lại depth của MainCamera thành -1 hoặc 0
+Clear Flag của GUICamera nên là Depth only

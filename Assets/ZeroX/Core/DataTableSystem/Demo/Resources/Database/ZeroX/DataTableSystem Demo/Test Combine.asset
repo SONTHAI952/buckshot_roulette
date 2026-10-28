@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0158264999a64279ae0fc592e7ac9248, type: 3}
+  m_Name: Test Combine
+  m_EditorClassIdentifier: 
+  listRow:
+  - scoreThreshold: 500
+    listShapeRate: '[{"shapeId":"0","rate":"2"},{"shapeId":"1","rate":"6"},{"shapeId":"2","rate":"6"},{"shapeId":"3","rate":"4"},{"shapeId":"4","rate":"4"},{"shapeId":"5","rate":"4"},{"shapeId":"6","rate":"4"},{"shapeId":"7","rate":"4"},{"shapeId":"8","rate":"4"},{"shapeId":"9","rate":"4"},{"shapeId":"10","rate":"2"},{"shapeId":"11","rate":"2"},{"shapeId":"12","rate":"2"},{"shapeId":"13","rate":"2"},{"shapeId":"18","rate":"4"},{"shapeId":"14","rate":"0"}]'
+  - scoreThreshold: 1000
+    listShapeRate: '[{"shapeId":"0","rate":"2"},{"shapeId":"1","rate":"5"},{"shapeId":"2","rate":"5"},{"shapeId":"3","rate":"4"},{"shapeId":"4","rate":"4"},{"shapeId":"5","rate":"4"},{"shapeId":"6","rate":"4"},{"shapeId":"7","rate":"4"},{"shapeId":"8","rate":"4"},{"shapeId":"9","rate":"4"},{"shapeId":"10","rate":"3"},{"shapeId":"11","rate":"3"},{"shapeId":"12","rate":"3"},{"shapeId":"13","rate":"3"},{"shapeId":"18","rate":"2"},{"shapeId":"14","rate":"0"}]'
+  - scoreThreshold: 2000
+    listShapeRate: '[{"shapeId":"0","rate":"4"},{"shapeId":"1","rate":"4"},{"shapeId":"2","rate":"4"},{"shapeId":"3","rate":"4"},{"shapeId":"4","rate":"4"},{"shapeId":"5","rate":"4"},{"shapeId":"6","rate":"4"},{"shapeId":"7","rate":"4"},{"shapeId":"8","rate":"4"},{"shapeId":"9","rate":"4"},{"shapeId":"10","rate":"4"},{"shapeId":"11","rate":"4"},{"shapeId":"12","rate":"4"},{"shapeId":"13","rate":"4"},{"shapeId":"18","rate":"4"},{"shapeId":"14","rate":"1"}]'
+  - scoreThreshold: 5000
+    listShapeRate: '[{"shapeId":"0","rate":"2"},{"shapeId":"1","rate":"2"},{"shapeId":"2","rate":"1"},{"shapeId":"3","rate":"1"},{"shapeId":"4","rate":"1"},{"shapeId":"5","rate":"2"},{"shapeId":"6","rate":"3"},{"shapeId":"7","rate":"3"},{"shapeId":"8","rate":"6"},{"shapeId":"9","rate":"4"},{"shapeId":"10","rate":"4"},{"shapeId":"11","rate":"3"},{"shapeId":"12","rate":"3"},{"shapeId":"13","rate":"4"},{"shapeId":"18","rate":"2"},{"shapeId":"14","rate":"2"}]'
+  - scoreThreshold: 7000
+    listShapeRate: '[{"shapeId":"0","rate":"2"},{"shapeId":"1","rate":"2"},{"shapeId":"2","rate":"1"},{"shapeId":"3","rate":"1"},{"shapeId":"4","rate":"1"},{"shapeId":"5","rate":"2"},{"shapeId":"6","rate":"3"},{"shapeId":"7","rate":"3"},{"shapeId":"8","rate":"6"},{"shapeId":"9","rate":"4"},{"shapeId":"10","rate":"4"},{"shapeId":"11","rate":"3"},{"shapeId":"12","rate":"3"},{"shapeId":"13","rate":"4"},{"shapeId":"18","rate":"2"},{"shapeId":"14","rate":"2"}]'
+  - scoreThreshold: 10000
+    listShapeRate: '[{"shapeId":"0","rate":"2"},{"shapeId":"1","rate":"2"},{"shapeId":"2","rate":"1"},{"shapeId":"3","rate":"1"},{"shapeId":"4","rate":"1"},{"shapeId":"5","rate":"2"},{"shapeId":"6","rate":"3"},{"shapeId":"7","rate":"3"},{"shapeId":"8","rate":"6"},{"shapeId":"9","rate":"4"},{"shapeId":"10","rate":"4"},{"shapeId":"11","rate":"3"},{"shapeId":"12","rate":"3"},{"shapeId":"13","rate":"4"},{"shapeId":"18","rate":"2"},{"shapeId":"14","rate":"3"}]'
+  - scoreThreshold: 15000
+    listShapeRate: '[{"shapeId":"0","rate":"2"},{"shapeId":"1","rate":"2"},{"shapeId":"2","rate":"1"},{"shapeId":"3","rate":"1"},{"shapeId":"4","rate":"1"},{"shapeId":"5","rate":"2"},{"shapeId":"6","rate":"3"},{"shapeId":"7","rate":"3"},{"shapeId":"8","rate":"6"},{"shapeId":"9","rate":"4"},{"shapeId":"10","rate":"4"},{"shapeId":"11","rate":"3"},{"shapeId":"12","rate":"3"},{"shapeId":"13","rate":"4"},{"shapeId":"18","rate":"2"},{"shapeId":"14","rate":"3"}]'

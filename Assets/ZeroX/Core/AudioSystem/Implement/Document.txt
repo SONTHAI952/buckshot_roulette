@@ -1,0 +1,2 @@
+Kéo prefab Audio Manager ở Scene mà sẽ được load trước khi bạn sử dụng đến AudioManager.
+Thường là scene Boot Game hoặc Main Menu

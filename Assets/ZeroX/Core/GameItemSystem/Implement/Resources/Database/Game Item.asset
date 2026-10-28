@@ -1,0 +1,180 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3c20a0832724b128693900a6f6535af, type: 3}
+  m_Name: Game Item
+  m_EditorClassIdentifier: 
+  listRow:
+  - id: coin
+    type: 1
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: coin
+    parentLinkIcon: 
+    linkIcon: coin
+    dataHandlerClass: 
+  - id: gem
+    type: 1
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: gem
+    parentLinkIcon: 
+    linkIcon: gem
+    dataHandlerClass: 
+  - id: energy
+    type: 2
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: heart
+    parentLinkIcon: 
+    linkIcon: energy
+    dataHandlerClass: 
+  - id: energy_infinity_limited_time
+    type: 3
+    amountType: 1
+    amountIsTime: 1
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: heart_infinity_limited_time
+    parentLinkIcon: 
+    linkIcon: energy_infinity_limited_time
+    dataHandlerClass: 
+  - id: remove_ads_forever
+    type: 4
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: remove_ads_forever
+    parentLinkIcon: 
+    linkIcon: remove_ads_forever
+    dataHandlerClass: 
+  - id: booster_1
+    type: 5
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: freeze
+    parentLinkIcon: 
+    linkIcon: booster_1
+    dataHandlerClass: 
+  - id: booster_2
+    type: 5
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: magnet
+    parentLinkIcon: 
+    linkIcon: booster_2
+    dataHandlerClass: 
+  - id: booster_3
+    type: 5
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: shuffle
+    parentLinkIcon: 
+    linkIcon: booster_3
+    dataHandlerClass: 
+  - id: booster_4
+    type: 5
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: wand
+    parentLinkIcon: 
+    linkIcon: booster_4
+    dataHandlerClass: 
+  - id: booster_5
+    type: 6
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: plustime
+    parentLinkIcon: 
+    linkIcon: booster_5
+    dataHandlerClass: 
+  - id: booster_6
+    type: 6
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: box
+    parentLinkIcon: 
+    linkIcon: booster_6
+    dataHandlerClass: 
+  - id: booster_7
+    type: 6
+    amountType: 1
+    amountIsTime: 0
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: x2star
+    parentLinkIcon: 
+    linkIcon: booster_7
+    dataHandlerClass: 
+  - id: booster_5_infinity_limited_time
+    type: 7
+    amountType: 1
+    amountIsTime: 1
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: plustime_infinity_limited_time
+    parentLinkIcon: 
+    linkIcon: booster_5_infinity_limited_time
+    dataHandlerClass: 
+  - id: booster_6_infinity_limited_time
+    type: 7
+    amountType: 1
+    amountIsTime: 1
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: box_infinity_limited_time
+    parentLinkIcon: 
+    linkIcon: booster_6_infinity_limited_time
+    dataHandlerClass: 
+  - id: booster_7_infinity_limited_time
+    type: 7
+    amountType: 1
+    amountIsTime: 1
+    isSingleton: 1
+    isNested: 0
+    isConsumable: 1
+    keyName: x2star_infinity_limited_time
+    parentLinkIcon: 
+    linkIcon: booster_7_infinity_limited_time
+    dataHandlerClass: 

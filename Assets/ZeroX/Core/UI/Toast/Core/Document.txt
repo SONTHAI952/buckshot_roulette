@@ -1,0 +1,18 @@
+1, Toast prefab được lấy từ đâu
+Nếu bạn chưa tạo scriptableObject Setting hoặc Setting không có prefab thì sẽ load trong Resources
+Resources được đặt trong: Assets/ZeroX/Core/UI/Toast/Implement/Resources/ZeroX/Toast/Default
+
+2, Tạo setting ở đâu
+ở Menu Tools/ZeroX/Toast/Setting
+
+3, Làm sao để custom toast của riêng mình
+Nếu bạn lười thì có thể sửa luôn file prefab Default ở đường dẫn trên
+Nếu bạn chăm thì có thể tạo 1 prefab riêng và kéo vào trong Setting
+
+4, Tạo nhanh custom prefab từ template
+Chuột phải trên scene -> ZeroX/Toast/Toast muốn tạo
+Như vậy là đã nhanh chóng có 1 toast template trên scene để tùy ý chỉnh sửa
+
+5, Vì sao tôi lại để sẵn Default trong Resources rồi mà còn tạo thêm Setting làm gì
+Vì đôi khi Toast default có thể sử dụng luôn vì giao diện của nó khá thân thiện rồi
+Đôi khi tôi cũng lười không muốn tạo setting rồi tạo custom prefab rồi kéo vào setting

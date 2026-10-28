@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 980751096a1f4ff3a1881ea9bbd30d75
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_button: {instanceID: 0}
+  - m_grayShader: {fileID: 4800000, guid: aa71c147b4a65a249b275b70afff6979, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
